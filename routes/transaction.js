@@ -4,11 +4,11 @@ const router = express.Router();
 const { requireSignin, isAuth, isAdmin } = require("../controllers/auth");
 const { userById } = require("../controllers/user");
 const { generateToken, create_checkout_session } = require("../controllers/braintree");
-const {createOrderPaypal, capturePaypalOrder} = require("../controllers/paypal")
+// const {createOrderPaypal, capturePaypalOrder} = require("../controllers/paypal")
 require('dotenv').config()
 const stripe = require("stripe")(`${process.env.STRIPE_SECRET_KEY}`);
 
-router.get("/braintree/getToken/:userId", requireSignin, isAuth, generateToken );
+// router.get("/braintree/getToken/:userId", requireSignin, isAuth, generateToken );
 router.post("/stripe/checkout/:userId", requireSignin, isAuth, create_checkout_session );
 // router.post("/paypal/create-order/",  createOrderPaypal );
 // router.post("/paypal/capture-order/",  capturePaypalOrder );
