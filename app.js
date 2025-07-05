@@ -27,7 +27,7 @@ mongoose.connect(process.env.MONGO_URI).then(()=> {
  app.use(bodyParser.json());
  app.use(cookieParser());
 app.use(cors({
-  origin: "https://ecommerce-frontend-oyzc.vercel.app/api"
+  origin: "https://ecommerce-frontend-oyzc.vercel.app"
 }));
     // {
 //   origin: "https://ecommerce-frontend-oyzc.vercel.app", // your frontend URL
