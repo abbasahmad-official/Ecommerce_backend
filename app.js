@@ -27,7 +27,10 @@ mongoose.connect(process.env.MONGO_URI).then(()=>{
  app.use(morgan("dev"));
  app.use(bodyParser.json());
  app.use(cookieParser());
- app.use(cors());
+app.use(cors({
+  origin: "https://ecommerce-frontend-oyzc.vercel.app", // your frontend URL
+  credentials: true, // allow cookies and headers if needed
+}));
             // app.use(expressValidator());
 // routes  middleware  
 app.use("/api", authRoutes);
