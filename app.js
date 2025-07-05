@@ -18,10 +18,12 @@ const orderRoutes = require("./routes/order");
 const app = express();
 
 // database
-mongoose.connect(process.env.MONGO_URI).then(()=>{
-        console.log("database is connected");
-    });
-
+mongoose.connect(process.env.MONGO_URI, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+  ssl: true,
+  sslValidate: true,
+});
 
 //middlewares
  app.use(morgan("dev"));
