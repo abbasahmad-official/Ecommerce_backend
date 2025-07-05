@@ -20,9 +20,7 @@ const app = express();
 // database
 mongoose.connect(process.env.MONGO_URI, {
   useNewUrlParser: true,
-  useUnifiedTopology: true,
-  ssl: true,
-  sslValidate: true,
+  useUnifiedTopology: true
 });
 
 //middlewares
